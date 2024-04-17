@@ -1,4 +1,4 @@
 function solution(arr, query) {    
-    return query.reduce((acc, q, i) =>
-                 i % 2 === 0 ? [...acc].splice(0, q+1) : [...acc].splice(q, acc.length - q), arr)
+    query.forEach((q, i) => arr = i % 2 === 0 ? arr.slice(0, q+1) : arr.slice(q, arr.length))
+    return arr;
 }
